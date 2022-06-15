@@ -11,10 +11,20 @@ export class King extends Figure {
     this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
     this.name = FigureNames.KING;
   }
-  canMove(target: Cell): boolean {
-    if (!super.canMove(target)) {
-      return false;
-    }
-    return true;
-  }
+
+  // canMove(target: Cell): boolean {
+  //   if (!super.canMove(target)) {
+  //     return false;
+  //   }
+  //   const dxDiagonal = Math.abs(this.cell.x - target.x);
+  //   const dyDiagonal = Math.abs(this.cell.y - target.y);
+  //   const min = Math.min(this.cell.y, target.y);
+  //   const max = Math.max(this.cell.y, target.y);
+  //   for (let y = min + 1; y < max; y++) {
+  //     if (!this.cell.board.getCell(this.cell.x, y).isEmpty()) {
+  //       return false;
+  //     }
+  //   }
+  //   return dxDiagonal === 1 && dyDiagonal === 1;
+  // }
 }
