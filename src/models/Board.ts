@@ -40,6 +40,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board();
     newBoard.cells = this.cells;
+    newBoard.lostWhiteFigures = this.lostWhiteFigures;
+    newBoard.lostBlackFigures = this.lostBlackFigures;
     return newBoard;
   }
 
@@ -87,5 +89,11 @@ export class Board {
     this.addRooks();
     this.addKnights();
     this.addBishops();
+  }
+
+  public addLostFigure(figure: Figure) {
+    figure.color === Colors.BLACK
+      ? this.lostBlackFigures.push(figure)
+      : this.lostWhiteFigures.push(figure);
   }
 }
